@@ -46,3 +46,9 @@ Arch Linux:
 ```
 sudo pacman -S ffmpeg
 ```
+### To use:
+Clone the repository:
+
+```
+git clone https://github.com/Yoorse/wave_converter/
+```
