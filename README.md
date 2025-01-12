@@ -9,6 +9,8 @@ ffmpeg
 Make sure you have ffmpeg installed and available to your PATH.
 Install TK to your system.
 
+I've attached a background picture. Place it somewhere and type in the path inside the python-file.
+
 For Windows:
 Download the ffmpeg executable from the official website.
 Extract the downloaded zip file to a directory (e.g., C:\ffmpeg).
