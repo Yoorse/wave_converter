@@ -1,5 +1,5 @@
 # Wave converter for Akai MPC and Roland SP
-Simple Wave Converter using ffmpeg to 44100Hz and 16.bit with a simple tk GUI.
+Simple Wave Converter using ffmpeg to 44100Hz and 16-bit with a simple tk GUI.
 Mainly coded for use in Linux. 
 
 I have no idea if it can be run in Windows.
