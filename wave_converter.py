@@ -74,9 +74,16 @@ class WAVConverterApp(tk.Tk):
                 if file.lower().endswith(supported_extensions):
                     input_path = os.path.join(input_directory, file)
                     output_path = os.path.join(output_directory, os.path.splitext(file)[0] + ".wav")
+                    
+                    # Skip if the file is already converted
+                    if os.path.exists(output_path):
+                        self.status.set(f"Skipping {file}, already converted.")
+                        self.update_idletasks()
+                        continue
+
                     self.status.set(f"Converting {file}...")
                     self.update_idletasks()
-                    process = subprocess.Popen(["ffmpeg", "-i", input_path, "-ar", "44000", output_path],
+                    process = subprocess.Popen(["ffmpeg", "-i", input_path, "-ar", "44000", "-sample_fmt", "s16", output_path],
                                                stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
                     for line in process.stderr:
                         self.status.set(line.strip())
