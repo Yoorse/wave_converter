@@ -1,6 +1,8 @@
 # Wave converter for Akai MPC and Roland SP
 Simple Wave Converter using [__ffmpeg__](https://ffmpeg.org/) to convert audio files to 44100Hz and 16-bit with a simple tk GUI.
 Mainly coded for use in Linux. 
+It will go into each sub-folder of your chosen root folder and convert each audio file and place it into a new folder called 'Converted' inside the subfolder.
+
 I have no idea if it can be run in Windows.
 
 ## Dependencies:
