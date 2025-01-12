@@ -30,9 +30,9 @@ code(sh brew install ffmpeg)
 ### For Linux:
 Install ffmpeg using your package manager:
 Debian/Ubuntu:
-´´´
+```
 sudo apt update
-´´´
+```
 '''
 sudo apt install ffmpeg
 '''
