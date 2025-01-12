@@ -14,7 +14,7 @@ class WAVConverterApp(tk.Tk):
         self.output_directory = tk.StringVar()
 
         # Load and set background image
-        self.background_image = Image.open("path/to/your/background_image.jpg")  # Update with your image path
+        self.background_image = Image.open("/source/mpc.jpg")  # Update with your image path
         self.background_photo = ImageTk.PhotoImage(self.background_image)
         self.background_label = tk.Label(self, image=self.background_photo)
         self.background_label.place(x=0, y=0, relwidth=1, relheight=1)
