@@ -1,10 +1,10 @@
-# Header 1 Wave converter for Akai MPC and Roland SP
+# Wave converter for Akai MPC and Roland SP
 Simple Wave Converter using ffmpeg to 44000 with tk gui.
 Mainly coded for use in Linux. 
 
 I have no idea if it can be run in Windows.
 
-Dependencies:
+## Dependencies:
 
 - tk
 - ffmpeg
