@@ -52,3 +52,9 @@ Clone the repository:
 ```
 git clone https://github.com/Yoorse/wave_converter/
 ```
+
+Change directory to wave_converter folder and make the python-file executable
+```
+cd wave_converter
+```
+
