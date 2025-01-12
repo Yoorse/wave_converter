@@ -7,7 +7,7 @@ import subprocess
 class WAVConverterApp(tk.Tk):
     def __init__(self):
         super().__init__()
-        self.title("MPC 2000 xl - Audio to 44000 Hz Converter")
+        self.title("MPC 2000 xl - Audio to 44100 Hz Converter")
         self.geometry("800x600")
         
         self.input_directory = tk.StringVar()
@@ -83,7 +83,7 @@ class WAVConverterApp(tk.Tk):
 
                     self.status.set(f"Converting {file}...")
                     self.update_idletasks()
-                    process = subprocess.Popen(["ffmpeg", "-i", input_path, "-ar", "44000", "-sample_fmt", "s16", output_path],
+                    process = subprocess.Popen(["ffmpeg", "-i", input_path, "-ar", "44100", "-sample_fmt", "s16", output_path],
                                                stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
                     for line in process.stderr:
                         self.status.set(line.strip())
