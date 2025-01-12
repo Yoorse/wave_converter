@@ -1,5 +1,10 @@
 # wave_converter
-Simple Wave Converter using ffmpeg to 44000 with tk gui
+Simple Wave Converter using ffmpeg to 44000 with tk gui.
+Mainly coded for use in Linux. 
+
+Dependencies:
+tk
+ffmpeg
 
 Make sure you have ffmpeg installed and available to your PATH.
 Install TK to your system.
