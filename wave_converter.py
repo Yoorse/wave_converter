@@ -30,8 +30,8 @@ class WAVConverterApp(tk.Tk):
     def create_widgets(self):
         # Input Directory
         tk.Label(self, text="Input Directory:", **self.label_style).place(x=50, y=50)
-        tk.Entry(self, textvariable=self.input_directory, width=50).place(x=200, y=50)
-        tk.Button(self, text="Browse", command=self.browse_input, **self.button_style).place(x=600, y=50)
+        tk.Entry(self, textvariable=self.input_directory, width=50).place(x=300, y=50)
+        tk.Button(self, text="Browse", command=self.browse_input, **self.button_style).place(x=700, y=50)
 
         # Checkbox for Output Directory
         self.checkbox = tk.Checkbutton(self, text="Use Output Directory (Optional):", variable=self.use_output_directory,
@@ -44,8 +44,8 @@ class WAVConverterApp(tk.Tk):
         self.output_button = tk.Button(self, text="Browse", command=self.browse_output, **self.button_style, state=tk.DISABLED)
 
         self.output_label.place(x=50, y=150)
-        self.output_entry.place(x=200, y=150)
-        self.output_button.place(x=600, y=150)
+        self.output_entry.place(x=300, y=150)
+        self.output_button.place(x=700, y=150)
 
         # Convert Button
         tk.Button(self, text="Convert", command=self.convert_files, **self.button_style).place(x=350, y=200)
@@ -54,13 +54,15 @@ class WAVConverterApp(tk.Tk):
         self.status = tk.StringVar()
         self.status.set("Ready")
         self.status_bar = tk.Label(self, textvariable=self.status, bd=1, relief=tk.SUNKEN, anchor=tk.W)
-        self.status_bar.place(x=0, y=580, width=400)  # Set width to 400 to make it narrower
+        self.status_bar.place(x=50, y=580, width=700)  # Set width to 400 to make it narrower
 
         # Information Textbox
-        self.info_text = tk.Text(self, height=10, width=40, bg='black', fg='white', font=('Courier', 12))
-        self.info_text.insert(tk.END, "Will create subfolders called Converted, if output folder is not chosen")
+        self.info_text = tk.Text(self, height=3, width=40, bg='black', fg='white', font=('Courier', 12))
+        self.info_text.insert(tk.END, "Will create subfolders called 'converted' in each directory\n"
+                                      "if output directory is not provided.\n"
+                                      "Supported file formats: .wav, .mp3, .aac, .flac, .ogg, .m4a")
         self.info_text.config(state=tk.DISABLED)
-        self.info_text.place(x=500, y=300)
+        self.info_text.place(x=50, y=300)
 
     def toggle_output_directory(self):
         if self.use_output_directory.get():
