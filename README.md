@@ -57,7 +57,7 @@ git clone https://github.com/Yoorse/wave_converter/
 Change directory to wave_converter folder and make the python-file executable
 ```
 cd wave_converter
-chmod +x wave_comverter.py 
+chmod +x wave_converter.py 
 ```
 
 Simply run the python file by using
