@@ -33,13 +33,13 @@ Debian/Ubuntu:
 ```
 sudo apt update
 ```
-'''
+```
 sudo apt install ffmpeg
-'''
+```
 
 CentOS/RHEL:
-sudo yum install epel-release
-sudo yum install ffmpeg
+```sudo yum install epel-release```
+```sudo yum install ffmpeg```
 
 Arch Linux:
-Sudo pacman -S ffmpeg
+```Sudo pacman -S ffmpeg```
