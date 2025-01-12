@@ -1,5 +1,6 @@
 import tkinter as tk
 from tkinter import filedialog, messagebox
+from PIL import Image, ImageTk
 import os
 import subprocess
 
@@ -39,6 +40,12 @@ class WAVConverterApp(tk.Tk):
         # Convert Button
         tk.Button(self, text="Convert", command=self.convert_files, **self.button_style).place(x=350, y=200)
 
+        # Status Bar
+        self.status = tk.StringVar()
+        self.status.set("Ready")
+        self.status_bar = tk.Label(self, textvariable=self.status, bd=1, relief=tk.SUNKEN, anchor=tk.W)
+        self.status_bar.place(x=0, y=580, relwidth=1)
+
     def browse_input(self):
         directory = filedialog.askdirectory()
         if directory:
@@ -67,13 +74,23 @@ class WAVConverterApp(tk.Tk):
                 if file.lower().endswith(supported_extensions):
                     input_path = os.path.join(input_directory, file)
                     output_path = os.path.join(output_directory, os.path.splitext(file)[0] + ".wav")
-                    subprocess.run(["ffmpeg", "-i", input_path, "-ar", "44000", output_path], check=True)
+                    self.status.set(f"Converting {file}...")
+                    self.update_idletasks()
+                    process = subprocess.Popen(["ffmpeg", "-i", input_path, "-ar", "44000", output_path],
+                                               stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+                    for line in process.stderr:
+                        self.status.set(line.strip())
+                        self.update_idletasks()
+                    process.wait()
+            self.status.set("Conversion completed successfully!")
             messagebox.showinfo("Success", "Conversion completed successfully!")
         except subprocess.CalledProcessError as e:
+            self.status.set("Error occurred during conversion!")
             messagebox.showerror("Error", f"An error occurred during conversion: {e}")
         except Exception as e:
+            self.status.set("Unexpected error occurred!")
             messagebox.showerror("Error", f"An unexpected error occurred: {e}")
 
 if __name__ == "__main__":
     app = WAVConverterApp()
-    app.mainloop(
+    app.mainloop()
