@@ -24,7 +24,7 @@ Click "OK" to close all windows.
 
 ### For macOS:
 Install ffmpeg using Homebrew (if you don't have Homebrew, install it first from brew.sh):
-**'sh brew install ffmpeg'**
+code(sh brew install ffmpeg)
 
 
 ### For Linux:
