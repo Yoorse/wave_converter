@@ -59,3 +59,9 @@ cd wave_converter
 chmod +x wave_comverter.py 
 ```
 
+Simply run the python file by using
+```
+python wave_converter.py
+```
+
+
