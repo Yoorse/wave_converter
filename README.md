@@ -5,8 +5,9 @@ Mainly coded for use in Linux.
 I have no idea if it can be run in Windows.
 
 Dependencies:
-tk
-ffmpeg
+
+- tk
+- ffmpeg
 
 Make sure you have ffmpeg installed and available to your PATH.
 Install TK to your system.
