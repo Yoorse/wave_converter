@@ -24,8 +24,9 @@ Click "OK" to close all windows.
 
 ### For macOS:
 Install ffmpeg using Homebrew (if you don't have Homebrew, install it first from brew.sh):
-code(sh brew install ffmpeg)
-
+```
+sh brew install ffmpeg
+```
 
 ### For Linux:
 Install ffmpeg using your package manager:
@@ -36,8 +37,12 @@ sudo apt install ffmpeg
 ```
 
 CentOS/RHEL:
-```sudo yum install epel-release```
-```sudo yum install ffmpeg```
+```
+sudo yum install epel-release
+sudo yum install ffmpeg
+```
 
 Arch Linux:
-```Sudo pacman -S ffmpeg```
+```
+sudo pacman -S ffmpeg
+```
